@@ -1,8 +1,3 @@
-# sdp_nginx
-<<<<<<< HEAD
-
-#### Table of Contents
-
 1. [Description](#description)
 1. [Setup - The basics of getting started with sdp_nginx](#setup)
     * [What sdp_nginx affects](#what-sdp_nginx-affects)
@@ -77,10 +72,3 @@ are Known Issues, you might want to include them under their own heading here.
 Since your module is awesome, other users will want to play with it. Let them
 know what the ground rules for contributing are.
 
-## Release Notes/Contributors/Etc. **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You can also add any additional sections you feel
-are necessary or important to include here. Please use the `## ` header.
-=======
->>>>>>> 5806b73d44d2060c8be6c3776e12b4a5f81a7273
