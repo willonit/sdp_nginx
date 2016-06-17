@@ -28,7 +28,8 @@ class sdp_nginx inherits sdp_nginx::params {
   }
 
   package{ 'git' :
-    ensure => present,
+    ensure  => present,
+    require => Package['nginx']
   }
 
   vcsrepo{ "${siteroot}${module_name}" :
