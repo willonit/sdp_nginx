@@ -16,13 +16,15 @@ This module is dependent on two other modules:
 
 ## Applying
 
-### Local Test
+### Vagrant Test
 This module was built and tested using a puppet Vagrant box. To reproduce the development environement, launch puppetlabs/ubuntu-14.04-64-puppet with Vagrant.
 
 You will need to add the following line to the sudoers file. Note the tab between `Defaults` and `exempt`.
+
 ```Defaults       exempt_group=vagrant```
 
-You can run sudo puppet agent -V to test if the sudoers modification applied correctly. Then run the follwing commands to install the module from git with dependancies. The last line will run the smoke test manifest to apply the module. The website will then be hosted at `<FQDN or IP>:8000`
+You can run sudo `puppet agent -V` to test if the sudoers modification applied correctly. Then run the following commands to install the module from git with dependencies. The last line will run the smoke test manifest to apply the module. The website will then be hosted at `<FQDN or IP>:8000`
+
  
 ```
 sudo wget https://github.com/willonit/sdp_nginx/archive/master.tar.gz
@@ -34,3 +36,9 @@ sudo puppet module install jfryman-nginx
 sudo puppet module install puppetlabs-vcsrepo
 sudo puppet apply /etc/puppetlabs/code/environments/production/modules/sdp_nginx/examples/init.pp
 ```
+
+### PE Classification
+The module can also be used with Puppet Enterprise. Install the module into the correct code directory on the PE Master along with dependencies. The node can be classified in the PE Console by adding the `sdp_nginx` class to a group. You may also apply the configuration by adding `include sdp_nginx` to your site.pp or another manifest. 
+
+
+
