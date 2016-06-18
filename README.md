@@ -17,7 +17,7 @@ This module is dependent on two other modules:
 ## Applying
 
 ### Vagrant Test
-This module was built and tested using a puppet Vagrant box. To reproduce the development environement, launch puppetlabs/ubuntu-14.04-64-puppet with Vagrant.
+This module was built and tested using a puppet Vagrant box. To reproduce the development environment, launch puppetlabs/ubuntu-14.04-64-puppet with Vagrant.
 
 You will need to add the following line to the sudoers file. Note the tab between `Defaults` and `exempt`.
 
