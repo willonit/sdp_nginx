@@ -14,3 +14,23 @@ This module is dependent on two other modules:
 - puppetlabs/vcsrepo
 - jfryman/nginx
 
+## Applying
+
+### Local Test
+This module was built and tested using a puppet Vagrant box. To reproduce the development environement, launch puppetlabs/ubuntu-14.04-64-puppet with Vagrant.
+
+You will need to add the following line to the sudoers file. Note the tab between `Defaults` and `exempt`.
+```Defaults       exempt_group=vagrant```
+
+You can run sudo puppet agent -V to test if the sudoers modification applied correctly. Then run the follwing commands to install the module from git with dependancies. The last line will run the smoke test manifest to apply the module. The website will then be hosted at `<FQDN or IP>:8000`
+ 
+```
+sudo wget https://github.com/willonit/sdp_nginx/archive/master.tar.gz
+sudo mkdir -p /etc/puppetlabs/code/environments/production/modules/
+sudo tar -xf master.tar.gz -C /etc/puppetlabs/code/environments/production/modules/
+sudo mv /etc/puppetlabs/code/environments/production/modules/sdp* /etc/puppetlabs/code/environments/production/modules/sdp_nginx
+rm -Rf master*
+sudo puppet module install jfryman-nginx
+sudo puppet module install puppetlabs-vcsrepo
+sudo puppet apply /etc/puppetlabs/code/environments/production/modules/sdp_nginx/examples/init.pp
+```
