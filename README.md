@@ -1,6 +1,5 @@
 #sdp_nginx
 
-##Description
 This module is used to deploy the exercise webpage to the requirements below:
 - server requests over port 8000
 - serve a page with the contents of the https://github.com/puppetlabs/exercise­webpage repository
